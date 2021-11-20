@@ -32,6 +32,30 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+// route barang
+    $routes->get('barang', 'barangController::index');
+    $routes->get('barang/tambah', 'barangController::tambah');
+    $routes->get('barang/tambah_barang', 'barangController::tambah_barang');
+    $routes->get('barang/edit', 'barangController::edit');
+    $routes->get('barang/update', 'barangController::update');
+    $routes->get('barang/hapus', 'barangController::hapus');
+// akhir route barang
+// route user
+$routes->get('user', 'userController::index');
+$routes->get('user/tambah', 'userController::tambah');
+$routes->get('user/tambah_user', 'userController::tambah_user');
+$routes->get('user/edit', 'userController::edit');
+$routes->get('user/update', 'userController::update');
+$routes->get('user/hapus', 'userController::hapus');
+// akhir route user
+// route sewa
+$routes->get('sewa', 'sewaController::index');
+$routes->get('sewa/tambah', 'sewaController::tambah');
+$routes->get('sewa/tambah_sewa', 'sewaController::tambah_sewa');
+$routes->get('sewa/edit', 'sewaController::edit');
+$routes->get('sewa/update', 'sewaController::update');
+$routes->get('sewa/hapus', 'sewaController::hapus');
+// akhir route sewa
 
 /*
  * --------------------------------------------------------------------
