@@ -32,29 +32,35 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('registrasi', 'Home::regis');
+$routes->get('login', 'Home::login');
+$routes->post('cek', 'SewaController::cek');
+// join
+$routes->get('sewa/info', 'sewaController::info');
+$routes->get('sewa/info2', 'sewaController::info2');
 // route barang
-    $routes->get('barang', 'barangController::index');
-    $routes->get('barang/tambah', 'barangController::tambah');
-    $routes->get('barang/tambah_barang', 'barangController::tambah_barang');
-    $routes->get('barang/edit', 'barangController::edit');
-    $routes->get('barang/update', 'barangController::update');
-    $routes->get('barang/hapus', 'barangController::hapus');
+    $routes->get('barang', 'BarangController::index');
+    $routes->get('barang/tambah', 'BarangController::tambah');
+    $routes->add('barang/tambah_barang', 'BarangController::tambah_barang');
+    $routes->get('barang/edit/(:num)', 'BarangController::edit/$1');
+    $routes->add('barang/update/(:num)', 'BarangController::update/$1');
+    $routes->get('barang/hapus/(:num)', 'BarangController::hapus/$1');
 // akhir route barang
 // route user
 $routes->get('user', 'userController::index');
 $routes->get('user/tambah', 'userController::tambah');
-$routes->get('user/tambah_user', 'userController::tambah_user');
-$routes->get('user/edit', 'userController::edit');
-$routes->get('user/update', 'userController::update');
-$routes->get('user/hapus', 'userController::hapus');
+$routes->post('user/tambah_user', 'userController::tambah_user');
+$routes->get('user/edit/(:num)', 'userController::edit/$1');
+$routes->post('user/update/(:num)', 'userController::update/$1');
+$routes->get('user/hapus/(:num)', 'userController::hapus/$1');
 // akhir route user
 // route sewa
 $routes->get('sewa', 'sewaController::index');
 $routes->get('sewa/tambah', 'sewaController::tambah');
-$routes->get('sewa/tambah_sewa', 'sewaController::tambah_sewa');
-$routes->get('sewa/edit', 'sewaController::edit');
-$routes->get('sewa/update', 'sewaController::update');
-$routes->get('sewa/hapus', 'sewaController::hapus');
+$routes->post('sewa/tambah_sewa', 'sewaController::tambah_sewa');
+$routes->get('sewa/edit/(:num)', 'sewaController::edit/$1');
+$routes->post('sewa/update/(:num)', 'sewaController::update/$1');
+$routes->get('sewa/hapus/(:num)', 'sewaController::hapus/$1');
 // akhir route sewa
 
 /*

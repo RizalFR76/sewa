@@ -7,14 +7,16 @@ use CodeIgniter\Model;
 class Sewa extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'sewas';
+    protected $table            = 'sewa';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        "id_penyewa","id_barang","tgl_sewa","tgl_ambil","tgl_pengembalian","k_sewa","k_pengembalian"
+    ];
 
     // Dates
     protected $useTimestamps = false;
